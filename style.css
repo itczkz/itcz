@@ -502,7 +502,7 @@ left: -170px;
 
 .fog-background {
   position: relative;
-  background-image: url("img/poezd.jpg"); /* путь к твоей картинке */
+  background-image: url("../img/poezd.jpg"); /* путь к твоей картинке */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -602,7 +602,7 @@ left: -170px;
   position: relative;
   width: 100%;
   min-height: 100vh;
-  background-image: url('img/machina.jpg'); /* замените на путь к вашей картинке */
+  background-image: url('../img/machina.jpg'); /* замените на путь к вашей картинке */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
