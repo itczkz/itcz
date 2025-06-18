@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Новости — ICZT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo"></div>
+ <a href="index.html" class="logo">
+      <img src="img/logo.png" class="logo-img" style="position: relative; left: 2px;"></div></a>
+</div>
+      <nav class="top-nav">
+        <div class="dropdown">
+          <span>О центре</span>
+          <div class="dropdown-content">
+            <a href="mission.html">Миссия и политика</a>
+            <a href="history.html">История компании</a>
+            <a href="documents.html">Документы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Деятельность</span>
+          <div class="dropdown-content">
+            <a href="activity.html">Инспекторский контроль</a>
+            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
+            <a href="review.html">Рассмотрение документации</a>
+          </div>
+        </div>
+        <a href="news.html">Новости</a>
+        <a href="faq.html">Вопросы и ответы</a>
+        <span onclick="scrollDown()">Контакты</span>
+        <a href="profile.html">Личная страница</a>
+      </nav>
+    </div>
+  </header>
+
+<script>
+function scrollDown() {
+  window.scrollTo({
+    top: document.body.scrollHeight
+  });
+}
+</script>
+
+
+  <main>
+    <h1>Новости</h1>
+  </main>
+
+ <footer class="site-footer">
+     <div class="footer-column footer-contact">
+      <h4>Контакты</h4>
+      <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
+      <p>Email: <a href="mailto:iczt@mail.ru">iczt@mail.ru</a></p>
+      <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
+      <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
+    </div>
+
+<div class="footer-social">
+  <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
+    <img src="img/instagram.png" alt="Instagram" />
+  </a>
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
+  </div>
+</footer
+
+</body>
+</html>

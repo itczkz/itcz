@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Личная страница — ICZT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+    <div class="header-container">
+      <div class="logo"></div>
+ <a href="index.html" class="logo">
+      <img src="img/logo.png" class="logo-img" style="position: fixed; left: 2px;"></img></div></a>
+ 
+      <nav class="top-nav">
+        <div class="dropdown">
+          <span>О центре</span>
+          <div class="dropdown-content">
+            <a href="mission.html">Миссия и политика</a>
+            <a href="history.html">История компании</a>
+            <a href="documents.html">Документы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Деятельность</span>
+          <div class="dropdown-content">
+            <a href="activity.html">Инспекторский контроль</a>
+            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
+            <a href="review.html">Рассмотрение документации</a>
+          </div>
+        </div>
+        <a href="news.html">Новости</a>
+        <a href="faq.html">Вопросы и ответы</a>
+        <span>Контакты</span>
+        <a href="profile.html">Личная страница</a>
+      </nav>
+    </div>
+</header>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-box {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      width: 300px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="login-box">
+    <h2>Личная страница</h2>
+    <input type="text" id="username" placeholder="Логин" required>
+    <input type="password" id="password" placeholder="Пароль" required>
+    <button onclick="checkLogin()">Войти</button>
+    <div class="error" id="error-message"></div>
+  </div>
+
+  <script>
+    function checkLogin() {
+      const username = document.getElementById('username').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const errorDiv = document.getElementById('error-message');
+
+      
+      const correctUsername = "123";
+      const correctPassword = "123";
+
+      if (username === correctUsername && password === correctPassword) {
+        window.location.href = "forum.html"; // Измени на нужную страницу
+      } else {
+        errorDiv.textContent = "Неверный логин или пароль";
+      }
+    }
+  </script>
+</body>
+</html>

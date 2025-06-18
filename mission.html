@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Миссия и политика — ICZT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+  <div class="header-container">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" class="logo-img" style="position: relative; left: 2px;"></a></div>
+
+    <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
+
+    <nav class="top-nav">
+      <div class="dropdown">
+        <span>О центре</span>
+        <div class="dropdown-content">
+          <a href="mission.html">Миссия и политика</a>
+          <a href="history.html">История компании</a>
+          <a href="documents.html">Документы</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span>Деятельность</span>
+        <div class="dropdown-content">
+          <a href="activity.html">Инспекторский контроль</a>
+          <a href="electronic.html">АС Электронный Инспектор-KZ</a>
+          <a href="review.html">Рассмотрение документации</a>
+        </div>
+      </div>
+      <a href="news.html">Новости</a>
+      <a href="faq.html">Вопросы и ответы</a>
+      <span onclick="scrollDown()">Контакты</span>
+      <a href="profile.html">Личная страница</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+function scrollDown() {
+  window.scrollTo({
+    top: document.body.scrollHeight
+  });
+}
+</script>
+
+
+  <main>
+  <section class="mission-policy">
+    <div class="background-wrapper">
+      <div class="overlay"></div>
+      <div class="content">
+    <h1>МИССИЯ И ПОЛИТИКА</h1>
+
+    <h2>Направление деятельности</h2>
+    <p>
+      ТОО «Инспекторский центр на железнодорожном транспорте» осуществляет инспекторский и приёмочный контроль
+      на предприятиях железнодорожного машиностроения, с целью поддержания высокого уровня соблюдения
+      технологических процессов на предприятиях. в соответствии ГОСТ 32894, согласно утвержденного перечня
+      продукции, подлежащей инспекторскому контролю по протокольному решению №06-ЦГ/154 от 03.12.2020 года
+      за подписью Главного инженера АО «НК «ҚТЖ» Котырева Б.К (с изменениями и дополнениями).
+    </p>
+
+    <h2>Миссия</h2>
+    <p>
+      Путем осуществления профессионального инспекторского и приёмочного контроля на предприятиях железнодорожного
+      машиностроения обеспечить высокое качество выпускаемой продукции с целью повышения безопасности движения
+      на инфраструктуре железнодорожного транспорта.
+    </p>
+
+    <h2>Цели</h2>
+    <ul>
+      <li>Постоянное улучшение и обеспечение высокого качества услуг при выполнении инспекторского и приёмочного контроля;</li>
+      <li>Обеспечение удовлетворённости и полного доверия потребителя;</li>
+      <li>Обеспечение объективного подтверждения высокого уровня качества выпускаемой продукции в эксплуатацию на инфраструктуру железнодорожного транспорта.</li>
+    </ul>
+
+    <h2>СТРАТЕГИЯ ДОСТИЖЕНИЯ ПОСТАВЛЕННЫХ ЦЕЛЕЙ</h2>
+    <ul>
+      <li>Поддержание высокого уровня инспекторского и приёмочного контроля;</li>
+      <li>Поддержание устойчивого доверия потребителя;</li>
+      <li>Независимое, объективное и компетентное подтверждение качества продукции и технологических процессов;</li>
+      <li>Соблюдение применяемых законодательных, нормативных и других требований;</li>
+      <li>Развитие партнёрских отношений;</li>
+      <li>Поддерживание соответствия Системы менеджмента качества требованиям стандарта ISO 9001 и постоянное повышение её результативности;</li>
+      <li>Регулярное повышение компетентности персонала;</li>
+      <li>Открытое взаимодействие со всеми заинтересованными сторонами;</li>
+      <li>Соблюдение конфиденциальности информации, получаемой при осуществлении услуг.</li>
+
+<div class="presentation-container">
+      <iframe src="https://drive.google.com/file/d/1vPU_pN7hwUiUgcbw5vN9p0YD_YIv2oCn/preview" width="640" height="480" allow="autoplay"></iframe>
+      </div>
+      </div>
+    </div>
+    </ul>
+  </section>
+</main>
+
+  <footer class="site-footer">
+    <div class="footer-column footer-contact">
+      <h4>Контакты</h4>
+      <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
+      <p>Email: <a href="mailto:iczt@mail.ru">iczt@mail.ru</a></p>
+      <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
+      <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
+    </div>
+
+<div class="footer-social">
+  <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
+    <img src="img/instagram.png" alt="Instagram" />
+  </a>
+</div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
+  </div>
+</footer>
+
+
+  <script>
+  const toggleButton = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.top-nav');
+
+  toggleButton.addEventListener('click', () => {
+    nav.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>
+

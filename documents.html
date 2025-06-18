@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Документы — ICZT</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" class="logo-img" style="position: relative; left: 2px;"></a></div>
+
+      <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
+
+      <nav class="top-nav">
+        <div class="dropdown">
+          <span>О центре</span>
+          <div class="dropdown-content">
+            <a href="mission.html">Миссия и политика</a>
+            <a href="history.html">История компании</a>
+            <a href="documents.html">Документы</a>
+          </div>
+        </div>
+        <div class="dropdown">
+          <span>Деятельность</span>
+          <div class="dropdown-content">
+            <a href="activity.html">Инспекторский контроль</a>
+            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
+            <a href="review.html">Рассмотрение документации</a>
+          </div>
+        </div>
+        <a href="news.html">Новости</a>
+        <a href="faq.html">Вопросы и ответы</a>
+        <span onclick="scrollDown()">Контакты</span>
+        <a href="profile.html">Личная страница</a>
+      </nav>
+    </div>
+  </header>
+
+<script>
+function scrollDown() {
+  window.scrollTo({
+    top: document.body.scrollHeight
+  });
+}
+</script>
+
+
+  <main>
+  <h1>Документы</h1>
+  <div class="documents-grid-wrapper">
+    <div class="documents-row-group">
+      <iframe src="https://drive.google.com/file/d/1EmSudh7jUzdOAnr-OwnF1ZKNfRYZiJLE/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1_fKGpcYafauopILHokkkGvT174MF7S50/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1paWaO6XviSqtuMy3TSJ6FFNcV9Bzc9Fu/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1eGeRO3f69gVs65r_zf2iP5wwXzhSOag-/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+  <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin: 20px 0;">
+  <a href="img/doc1.jpg" target="_blank">
+    <img src="img/doc1.jpg" width="300" height="200" style="border-radius: 8px; object-fit: cover; box-shadow: 0 0 8px rgba(0,0,0,0.3); cursor: pointer;" />
+  </a>
+  <a href="img/doc2.jpg" target="_blank">
+    <img src="img/doc2.jpg" width="300" height="200" style="border-radius: 8px; object-fit: cover; box-shadow: 0 0 8px rgba(0,0,0,0.3); cursor: pointer;" />
+  </a>
+</div>
+
+    <div class="documents-row-group">
+      <iframe src="https://drive.google.com/file/d/10fHujD8tPb6B2hPzo-ACHpkgjSfilhxi/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1wINlooSgQgB8JtXvPYNldf2O9JPSG_J3/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1amy3zrnoIOb6u5_kJHSSLmpXkedSRkn1/preview" width="640" height="480" allow="autoplay"></iframe>
+      <iframe src="https://drive.google.com/file/d/1k-rHmtitMFqbxdH037JsNz4w21T1Urbi/preview" width="640" height="480" allow="autoplay"></iframe>
+    </div>
+  </div>
+</main>
+
+  <footer class="site-footer">
+      <div class="footer-column footer-contact">
+        <h4>Контакты</h4>
+        <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
+        <p>Email: <a href="mailto:iczt@mail.ru">iczt@mail.ru</a></p>
+        <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
+        <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
+      </div>
+
+      <div class="footer-social">
+        <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
+          <img src="img/instagram.png" alt="Instagram" />
+        </a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.top-nav');
+
+    toggleButton.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+
+</body>
+</html>
