@@ -512,7 +512,7 @@ left: -170px;
   z-index: 1;
 }
 
-.fog-background .fog-overlay {
+.fog-overlay {
   content: "";
   position: absolute;
   inset: 0;
