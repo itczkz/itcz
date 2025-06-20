@@ -62,52 +62,121 @@
 
     <input type="text" id="name" placeholder="Имя (ID профиля)" />
     <input type="email" id="email" placeholder="Email" />
+    <input type="password" id="password" placeholder="Пароль" />
     <textarea id="about" placeholder="О себе" rows="3"></textarea>
     <input type="file" id="photoInput" accept="image/*" />
     <img src="" id="avatar" class="avatar" alt="Фото профиля" />
 
-    <button onclick="saveProfile()">Сохранить</button>
+    <button onclick="saveProfile()">💾 Сохранить</button>
+    <button onclick="handleLogin()">🔐 Войти</button>
+
     <div class="status" id="status"></div>
   </div>
 
   <script>
-  function handleLogin() {
-    const email = document.querySelector('input[type="email"]').value.trim();
-    const password = document.querySelector('input[type="password"]').value.trim();
-
-    if (!email || !password) {
-      alert('Пожалуйста, заполните все поля');
-      return false;
+    // Загружаем список профилей
+    function loadProfileList() {
+      const select = document.getElementById('profileList');
+      const profiles = JSON.parse(localStorage.getItem('profiles') || '{}');
+      select.innerHTML = '<option value="">Выберите профиль</option>';
+      Object.keys(profiles).forEach(key => {
+        const opt = document.createElement('option');
+        opt.value = key;
+        opt.textContent = key;
+        select.appendChild(opt);
+      });
     }
 
-    let users = JSON.parse(localStorage.getItem('users') || '[]');
-    if (users.length === 0) {
-      users = [
-        { name: 'Meirman', email: 'kuanyshbekmeir@gmail.com', password: 'admin123', role: 'Admin' },
-        { name: 'User1', email: 'user1@test.com', password: 'user123', role: 'User' }
-      ];
-      localStorage.setItem('users', JSON.stringify(users));
+    // Загружаем выбранный профиль
+    function loadSelectedProfile() {
+      const selected = document.getElementById('profileList').value;
+      if (!selected) return;
+
+      const profiles = JSON.parse(localStorage.getItem('profiles') || '{}');
+      const profile = profiles[selected];
+      if (profile) {
+        document.getElementById('name').value = profile.name;
+        document.getElementById('email').value = profile.email;
+        document.getElementById('about').value = profile.about;
+        document.getElementById('avatar').src = profile.photo || '';
+        document.getElementById('password').value = ''; // Пароль не сохраняем по безопасности
+      }
     }
 
-    const user = users.find(u => u.email === email && u.password === password);
-    if (!user) {
-      alert('Неверный email или пароль');
-      return false;
+    // Сохраняем профиль
+    function saveProfile() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const about = document.getElementById('about').value.trim();
+      const photoInput = document.getElementById('photoInput');
+      const avatar = document.getElementById('avatar');
+
+      if (!name || !email) {
+        alert('Имя и Email обязательны!');
+        return;
+      }
+
+      let profiles = JSON.parse(localStorage.getItem('profiles') || '{}');
+      let profile = { name, email, about };
+
+      // Если загружено фото — читаем как base64
+      if (photoInput.files.length > 0) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          profile.photo = reader.result;
+          profiles[name] = profile;
+          localStorage.setItem('profiles', JSON.stringify(profiles));
+          document.getElementById('status').textContent = '✅ Профиль сохранён!';
+          loadProfileList();
+          avatar.src = reader.result;
+        };
+        reader.readAsDataURL(photoInput.files[0]);
+      } else {
+        profile.photo = avatar.src;
+        profiles[name] = profile;
+        localStorage.setItem('profiles', JSON.stringify(profiles));
+        document.getElementById('status').textContent = '✅ Профиль сохранён!';
+        loadProfileList();
+      }
     }
 
-    localStorage.setItem('currentUser', JSON.stringify(user));
-    if (user.role === 'Admin') {
-      window.location.href = 'admin.html';
-    } else {
-      alert('Вход выполнен, но доступ только для админа');
+    // Вход в систему
+    function handleLogin() {
+      const email = document.getElementById('email').value.trim();
+      const password = document.getElementById('password').value.trim();
+
+      if (!email || !password) {
+        alert('Пожалуйста, заполните Email и пароль');
+        return;
+      }
+
+      let users = JSON.parse(localStorage.getItem('users') || '[]');
+      if (users.length === 0) {
+        users = [
+          { name: 'Meirman', email: 'kuanyshbekmeir@gmail.com', password: 'admin123', role: 'Admin' },
+          { name: 'User1', email: 'user1@test.com', password: 'user123', role: 'User' }
+        ];
+        localStorage.setItem('users', JSON.stringify(users));
+      }
+
+      const user = users.find(u => u.email === email && u.password === password);
+      if (!user) {
+        alert('❌ Неверный email или пароль');
+        return;
+      }
+
+      localStorage.setItem('currentUser', JSON.stringify(user));
+      if (user.role === 'Admin') {
+        window.location.href = 'admin.html';
+      } else {
+        alert('✅ Вход выполнен, но доступ только для админа');
+      }
     }
-    return true;
-  }
 
-  document.addEventListener('DOMContentLoaded', () => {
-    document.querySelector('button').onclick = handleLogin;
-  });
-</script>
-
+    // Автозагрузка списка при старте
+    document.addEventListener('DOMContentLoaded', () => {
+      loadProfileList();
+    });
+  </script>
 </body>
 </html>
