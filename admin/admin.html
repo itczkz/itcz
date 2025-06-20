@@ -293,6 +293,24 @@
     </style>
 </head>
 <body>
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const user = JSON.parse(localStorage.getItem('currentUser'));
+    if (!user || user.role !== 'Admin') {
+      alert('Доступ запрещен. Только для админов!');
+      window.location.href = 'forum.html';
+    }
+  });
+
+  function logout() {
+    localStorage.removeItem('currentUser');
+    window.location.href = 'forum.html';
+  }
+</script>
+
+<!-- туда же кнопку -->
+<button onclick="logout()">Выйти</button>
+
     <div class="admin-container">
         <header class="admin-header">
             <h1>📊 Админ-панель IT-центра</h1>
