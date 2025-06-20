@@ -71,77 +71,13 @@
   </div>
 
   <script>
-    const profileList = document.getElementById("profileList");
-
-    function saveProfile() {
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value;
-      const about = document.getElementById("about").value;
-      const photo = document.getElementById("avatar").src;
-
-      if (!name) {
-        alert("Введите имя профиля");
-        return;
-      }
-
-      const profile = { name, email, about, photo };
-      localStorage.setItem("profile_" + name, JSON.stringify(profile));
-      updateProfileList();
-      document.getElementById("status").innerText = "Профиль сохранён!";
-      setTimeout(() => {
-        document.getElementById("status").innerText = "";
-      }, 2000);
-    }
-
-    function updateProfileList() {
-      const keys = Object.keys(localStorage).filter(key => key.startsWith("profile_"));
-      profileList.innerHTML = <option value="">Выберите профиль</option>;
-      keys.forEach(key => {
-        const profileName = key.replace("profile_", "");
-        const option = document.createElement("option");
-        option.value = profileName;
-        option.textContent = profileName;
-        profileList.appendChild(option);
-      });
-    }
-
-    function loadSelectedProfile() {
-      const selected = profileList.value;
-      if (!selected) return;
-
-      const data = localStorage.getItem("profile_" + selected);
-      if (!data) return;
-
-      const profile = JSON.parse(data);
-      document.getElementById("name").value = profile.name;
-      document.getElementById("email").value = profile.email;
-      document.getElementById("about").value = profile.about;
-      document.getElementById("avatar").src = profile.photo || "";
-    }
-
-    document.getElementById("photoInput").addEventListener("change", function () {
-      const file = this.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        document.getElementById("avatar").src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // Загрузка профилей при старте
-    window.onload = updateProfileList;
-  </script>
-</body>
-</html>
-// Добавьте этот скрипт в конец файла forum.html
-function handleLogin() {
-    const profile = document.getElementById('profile').value;
-    const email = document.querySelector('input[type="email"]').value;
-    const password = document.querySelector('input[type="password"]').value;
+    // Добавьте этот скрипт в конец файла forum.html
+    function handleLogin() {
+      const profile = document.getElementById('profile').value;
+      const email = document.querySelector('input[type="email"]').value;
+      const password = document.querySelector('input[type="password"]').value;
     
-    if (!email || !password) {
+      if (!email || !password) {
         alert('Пожалуйста, заполните все поля');
         return false;
     }
@@ -193,3 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 });
+  </script>
+</body>
+</html>
+
