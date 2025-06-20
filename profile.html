@@ -5,46 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Личная страница — ICZT</title>
   <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<header>
-    <div class="header-container">
-      <div class="logo"></div>
- <a href="index.html" class="logo">
-      <img src="img/logo.png" class="logo-img" style="position: fixed;left: 2px;top: 55px; /left: -50px;display: flex;align-items: baseline;justify-content: flex-end;font-family: &quot;Cormorant Garamond&quot;, serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;flex-direction: row-reverse;flex-wrap: wrap;align-content: flex-start;"></img></div></a>
- 
-      <nav class="top-nav">
-        <div class="dropdown">
-          <span>О центре</span>
-          <div class="dropdown-content">
-            <a href="mission.html">Миссия и политика</a>
-            <a href="history.html">История компании</a>
-            <a href="documents.html">Документы</a>
-          </div>
-        </div>
-        <div class="dropdown">
-          <span>Деятельность</span>
-          <div class="dropdown-content">
-            <a href="activity.html">Инспекторский контроль</a>
-            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
-            <a href="review.html">Рассмотрение документации</a>
-          </div>
-        </div>
-        <a href="news.html">Новости</a>
-        <a href="faq.html">Вопросы и ответы</a>
-        <span>Контакты</span>
-        <a href="profile.html">Личная страница</a>
-      </nav>
-    </div>
-</header>
-<style>
+  <style>
     body {
       font-family: Arial, sans-serif;
       background-color: #f4f4f4;
+      margin: 0;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid #ccc;
+      padding: 15px;
+    }
+
+    .header-container {
       display: flex;
-      justify-content: center;
       align-items: center;
-      height: 100vh;
+      justify-content: space-between;
+    }
+
+    .top-nav {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .top-nav a, .top-nav span {
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #ffffff;
+      border: 1px solid #ccc;
+      z-index: 1;
+      top: 100%;
+      left: 0;
+      padding: 10px;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
     }
 
     .login-box {
@@ -53,6 +61,7 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       width: 300px;
+      margin: 100px auto;
     }
 
     input {
@@ -83,39 +92,73 @@
       margin-top: 10px;
       text-align: center;
     }
+
+    .logo-img {
+      height: 50px;
+    }
   </style>
 </head>
 <body>
 
-  <div class="login-box">
-    <h2>Личная страница</h2>
-    <input type="text" id="username" placeholder="Логин" required>
-    <input type="password" id="password" placeholder="Пароль" required>
-    <button onclick="checkLogin()">Войти</button>
-    <div class="error" id="error-message"></div>
+<header>
+  <div class="header-container">
+    <a href="index.html" class="logo">
+      <img src="img/logo.png" alt="Логотип" class="logo-img" />
+    </a>
+    <nav class="top-nav">
+      <div class="dropdown">
+        <span>О центре</span>
+        <div class="dropdown-content">
+          <a href="mission.html">Миссия и политика</a>
+          <a href="history.html">История компании</a>
+          <a href="documents.html">Документы</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <span>Деятельность</span>
+        <div class="dropdown-content">
+          <a href="activity.html">Инспекторский контроль</a>
+          <a href="electronic.html">АС Электронный Инспектор-KZ</a>
+          <a href="review.html">Рассмотрение документации</a>
+        </div>
+      </div>
+      <a href="news.html">Новости</a>
+      <a href="faq.html">Вопросы и ответы</a>
+      <span>Контакты</span>
+      <a href="profile.html">Личная страница</a>
+    </nav>
   </div>
+</header>
 
-  <script>
-    function checkLogin() {
-      const username = document.getElementById('username').value.trim();
-      const password = document.getElementById('password').value.trim();
-      const errorDiv = document.getElementById('error-message');
+<div class="login-box">
+  <h2>Вход в профиль</h2>
+  <input type="text" id="username" placeholder="Логин" required>
+  <input type="password" id="password" placeholder="Пароль" required>
+  <button onclick="checkLogin()">Войти</button>
+  <div class="error" id="error-message"></div>
+</div>
 
-      
-      const correctUsername = "123";
-      const correctPassword = "123";
+<script>
+  function checkLogin() {
+    const username = document.getElementById('username').value.trim();
+    const password = document.getElementById('password').value.trim();
+    const errorDiv = document.getElementById('error-message');
 
-      if (username === correctUsername && password === correctPassword) {
-        const user = {
+    const correctUsername = "123";
+    const correctPassword = "123";
+
+    if (username === correctUsername && password === correctPassword) {
+      const user = {
         name: username,
         role: "Admin"
-        };
-        localStorage.setItem("currentUser", JSON.stringify(user));
-        window.location.href = "forum.html"; // или сразу на admin.html, если хочешь
-      } else {
-        errorDiv.textContent = "Неверный логин или пароль";
-      }
+      };
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      window.location.href = "forum.html"; // можно заменить на "admin.html", если нужно
+    } else {
+      errorDiv.textContent = "❌ Неверный логин или пароль";
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
