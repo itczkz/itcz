@@ -1,137 +1,58 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Мульти-Профили</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f3f3f3;
-      display: flex;
-      justify-content: center;
-      padding: 30px;
+// Добавьте этот скрипт в конец файла forum.html
+function handleLogin() {
+    const profile = document.getElementById('profile').value;
+    const email = document.querySelector('input[type="email"]').value;
+    const password = document.querySelector('input[type="password"]').value;
+    
+    if (!email || !password) {
+        alert('Пожалуйста, заполните все поля');
+        return false;
     }
-    .container {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      width: 350px;
+    
+    // Инициализируем пользователей если их нет
+    let users = JSON.parse(localStorage.getItem('users') || '[]');
+    if (users.length === 0) {
+        users = [
+            {
+                name: 'Meirman',
+                email: 'kuanyshbekmeir@gmail.com',
+                password: 'admin123',
+                role: 'Admin'
+            },
+            {
+                name: 'Admin',
+                email: 'admin@itcz.kz',
+                password: 'admin123',
+                role: 'Admin'
+            }
+        ];
+        localStorage.setItem('users', JSON.stringify(users));
     }
-    input, textarea, button, select {
-      width: 100%;
-      padding: 10px;
-      margin: 8px 0;
-      border-radius: 6px;
-      border: 1px solid #ccc;
+    
+    const user = users.find(u => u.email === email);
+    
+    if (user && user.password === password) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+        
+        if (user.role === 'Admin') {
+            window.location.href = 'admin.html';
+        } else {
+            window.location.href = 'profile.html';
+        }
+        return true;
     }
-    button {
-      background-color: #007bff;
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
+    
+    alert('Неверный email или пароль');
+    return false;
+}
+
+// Привязываем функцию к кнопке "Сохранить"
+document.addEventListener('DOMContentLoaded', function() {
+    const saveButton = document.querySelector('.btn[style*="background: #007bff"]');
+    if (saveButton) {
+        saveButton.onclick = function(e) {
+            e.preventDefault();
+            handleLogin();
+        };
     }
-    button:hover {
-      background-color: #0056b3;
-    }
-    .avatar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background: #ddd;
-      object-fit: cover;
-      display: block;
-      margin: 10px auto;
-    }
-    .status {
-      font-size: 0.9em;
-      color: green;
-      text-align: center;
-      margin-top: 10px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h2>Профиль пользователя</h2>
-
-    <select id="profileList" onchange="loadSelectedProfile()">
-      <option value="">Выберите профиль</option>
-    </select>
-
-    <input type="text" id="name" placeholder="Имя (ID профиля)" />
-    <input type="email" id="email" placeholder="Email" />
-    <textarea id="about" placeholder="О себе" rows="3"></textarea>
-    <input type="file" id="photoInput" accept="image/*" />
-    <img src="" id="avatar" class="avatar" alt="Фото профиля" />
-
-    <button onclick="saveProfile()">Сохранить</button>
-    <div class="status" id="status"></div>
-  </div>
-
-  <script>
-    const profileList = document.getElementById("profileList");
-
-    function saveProfile() {
-      const name = document.getElementById("name").value.trim();
-      const email = document.getElementById("email").value;
-      const about = document.getElementById("about").value;
-      const photo = document.getElementById("avatar").src;
-
-      if (!name) {
-        alert("Введите имя профиля");
-        return;
-      }
-
-      const profile = { name, email, about, photo };
-      localStorage.setItem("profile_" + name, JSON.stringify(profile));
-      updateProfileList();
-      document.getElementById("status").innerText = "Профиль сохранён!";
-      setTimeout(() => {
-        document.getElementById("status").innerText = "";
-      }, 2000);
-    }
-
-    function updateProfileList() {
-      const keys = Object.keys(localStorage).filter(key => key.startsWith("profile_"));
-      profileList.innerHTML = <option value="">Выберите профиль</option>;
-      keys.forEach(key => {
-        const profileName = key.replace("profile_", "");
-        const option = document.createElement("option");
-        option.value = profileName;
-        option.textContent = profileName;
-        profileList.appendChild(option);
-      });
-    }
-
-    function loadSelectedProfile() {
-      const selected = profileList.value;
-      if (!selected) return;
-
-      const data = localStorage.getItem("profile_" + selected);
-      if (!data) return;
-
-      const profile = JSON.parse(data);
-      document.getElementById("name").value = profile.name;
-      document.getElementById("email").value = profile.email;
-      document.getElementById("about").value = profile.about;
-      document.getElementById("avatar").src = profile.photo || "";
-    }
-
-    document.getElementById("photoInput").addEventListener("change", function () {
-      const file = this.files[0];
-      if (!file) return;
-
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        document.getElementById("avatar").src = e.target.result;
-      };
-      reader.readAsDataURL(file);
-    });
-
-    // Загрузка профилей при старте
-    window.onload = updateProfileList;
-  </script>
-</body>
-</html>
+});
