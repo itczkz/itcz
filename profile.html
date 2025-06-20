@@ -106,7 +106,12 @@
       const correctPassword = "123";
 
       if (username === correctUsername && password === correctPassword) {
-        window.location.href = "forum.html"; // Измени на нужную страницу
+        const user = {
+        name: username,
+        role: "Admin"
+        };
+        localStorage.setItem("currentUser", JSON.stringify(user));
+        window.location.href = "forum.html"; // или сразу на admin.html, если хочешь
       } else {
         errorDiv.textContent = "Неверный логин или пароль";
       }
