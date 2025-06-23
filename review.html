@@ -2,83 +2,66 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Рассмотрение технической документации — ICZT</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-
   <header>
-  <div class="header-container">
-    <a href="index.html" class="logo">
-      <img src="img/logo.png" class="logo-img" style="position: fixed;left: 2px;top: 55px; /left: -50px;display: flex;align-items: baseline;justify-content: flex-end;font-family: &quot;Cormorant Garamond&quot;, serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;flex-direction: row-reverse;flex-wrap: wrap;align-content: flex-start;"></a></div>
-
-    <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
-
-    <nav class="top-nav">
-      <div class="dropdown">
-        <span>О центре</span>
-        <div class="dropdown-content">
-          <a href="mission.html">Миссия и политика</a>
-          <a href="history.html">История компании</a>
-          <a href="documents.html">Документы</a>
+    <div class="header-container">
+      <a href="/" class="logo">
+        <img src="/img/logo.png" alt="Логотип ICZT" class="logo-img" />
+      </a>
+      <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
+      <nav class="top-nav">
+        <div class="dropdown">
+          <span>О центре</span>
+          <div class="dropdown-content">
+            <a href="/mission">Миссия и политика</a>
+            <a href="/history">История компании</a>
+            <a href="/documents">Документы</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <span>Деятельность</span>
-        <div class="dropdown-content">
-          <a href="activity.html">Инспекторский контроль</a>
-          <a href="electronic.html">АС Электронный Инспектор-KZ</a>
-          <a href="review.html">Рассмотрение документации</a>
+        <div class="dropdown">
+          <span>Деятельность</span>
+          <div class="dropdown-content">
+            <a href="/activity">Инспекторский контроль</a>
+            <a href="/electronic">АС Электронный Инспектор-KZ</a>
+            <a href="/review" class="active">Рассмотрение документации</a>
+          </div>
         </div>
-      </div>
-      <a href="news.html">Новости</a>
-      <a href="faq.html">Вопросы и ответы</a>
-      <span onclick="scrollDown()">Контакты</span>
-      <a href="profile.html">Личная страница</a>
-    </nav>
-  </div>
-</header>
+        <a href="/news">Новости</a>
+        <a href="/faq">Вопросы и ответы</a>
+        <a href="#contacts">Контакты</a>
+        <a href="/profile">Личная страница</a>
+      </nav>
+    </div>
+  </header>
 
-<script>
-function scrollDown() {
-  window.scrollTo({
-    top: document.body.scrollHeight
-  });
-}
-</script>
+  <main class="main-content">
+    <section class="content-section">
+      <h1>Рассмотрение технической документации</h1>
+      <p>В соответствии с ГОСТ 32894-2014 «Продукция железнодорожного назначения. Инспекторский контроль. Общие положения», ТОО «ИЦЖТ» осуществляет рассмотрение и согласование технической документации, касающейся грузовых вагонов, их комплектующих, а также технологических процессов изготовления, ремонта и модернизации.</p>
 
-  <main style="display: flex; justify-content: center;">
-  <section style="max-width: 1200px; width: 100%; padding: 20px; text-align: justify; line-height: 1.8; font-size: 20px;">
-  <h1 style="text-align: center;">Рассмотрение технической документации</h1>
-  <div class="main-content" style="max-width: 1000px; margin: 0 auto; line-height: 1.8;">
-    <p>
-      В рамках полномочий, в соответствии ГОСТ 32894-2014 «Продукция железнодорожного назначения. Инспекторский контроль. Общие положения»,
-      ТОО «ИЦЖТ» рассматривает и согласовывает техническую документацию на грузовые вагоны, их составные части и технологические процессы при изготовлении, ремонте и модернизации.
-    </p>
+      <p><strong>Документация, предоставляемая для рассмотрения:</strong></p>
+      <ul>
+        <li>технические условия и изменения к ним;</li>
+        <li>программы и методики приемочных, квалификационных и типовых испытаний;</li>
+        <li>извещения об изменении чертежей;</li>
+        <li>технологические инструкции по неразрушающему контролю вагонного литья и изменения к ним;</li>
+        <li>технологические инструкции по исправлению сваркой дефектов стального вагонного литья.</li>
+      </ul>
 
-    <p>Предприятия, на которых ТОО «ИЦЖТ» проводит инспекторский контроль направляют для рассмотрения следующую документацию:</p>
+      <p><strong>На предприятиях, находящихся под инспекторским контролем ТОО «ИЦЖТ», рассматриваются следующие документы:</strong></p>
+      <ul>
+        <li>порядок осуществления входного контроля и перечни материалов и комплектующих;</li>
+        <li>программы и методики приемосдаточных и периодических испытаний;</li>
+        <li>технологическая документация по изготовлению и контролю качества продукции.</li>
+      </ul>
+    </section>
+  </main>
 
-    <ul>
-      <li>технические условия и изменения к ним;</li>
-      <li>программы и методики приемочных, квалификационных и типовых испытаний;</li>
-      <li>извещения об изменении чертежей;</li>
-      <li>технологические инструкции по неразрушающему контролю вагонного литья и изменения к ним;</li>
-      <li>технологические инструкции по исправлению сваркой дефектов стального вагонного литья.</li>
-    </ul>
-
-    <p>Непосредственно на предприятиях, инспекторский контроль на которых осуществляет ТОО «ИЦЖТ», инспекторами-приемщиками рассматривается следующая техническая документация и изменения к ней:</p>
-
-    <ul>
-      <li>порядок осуществления входного контроля и перечни материалов и комплектующих, используемых при изготовлении продукции и требующие проведения входного контроля;</li>
-      <li>программы и методики приемосдаточных и периодических испытаний продукции;</li>
-      <li>технологическая документация на выполнение работ, связанных с изготовлением и контролем качества продукции.</li>
-    </ul>
-  </div>
-</section>
-</main>
-
-  <footer class="site-footer">
+  <footer class="site-footer" id="contacts">
     <div class="footer-column footer-contact">
       <h4>Контакты</h4>
       <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
@@ -86,31 +69,22 @@ function scrollDown() {
       <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
       <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
     </div>
-
-<div class="footer-social">
-  <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
-    <img src="img/instagram.png" alt="Instagram" />
-  </a>
-</div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
-  </div>
-</footer>
-
+    <div class="footer-social">
+      <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
+        <img src="/img/instagram.png" alt="Instagram" />
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
+    </div>
+  </footer>
 
   <script>
-  const toggleButton = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.top-nav');
-
-  toggleButton.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
-
+    const toggleButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.top-nav');
+    toggleButton.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
-</html>
-
 </html>
