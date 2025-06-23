@@ -2,132 +2,51 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Главная страница — ICZT</title>
-  <link rel="stylesheet" href="style.css" >
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;1,300&" display="swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Добро пожаловать в ICZT</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
-  <div class="header-container">
-    <a href="index.html" class="logo">
-      <img src="img/logo.png" class="logo-img" style="position: fixed;left: 2px;top: 55px; /left: -50px;display: flex;align-items: baseline;justify-content: flex-end;font-family: &quot;Cormorant Garamond&quot;, serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;flex-direction: row-reverse;flex-wrap: wrap;align-content: flex-start;"></a>
-</div>
-    <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
-
-    <nav class="top-nav" style>
-      <div class="dropdown">
-        <span>О центре</span>
-        <div class="dropdown-content">
-          <a href="mission.html">Миссия и политика</a>
-          <a href="history.html">История компании</a>
-          <a href="documents.html">Документы</a>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="img/logo.png" alt="Логотип ICZT" class="logo-img" />
+      </a>
+      <nav class="top-nav">
+        <div class="dropdown">
+          <span>О центре</span>
+          <div class="dropdown-content">
+            <a href="mission.html">Миссия и политика</a>
+            <a href="history.html">История компании</a>
+            <a href="documents.html">Документы</a>
+          </div>
         </div>
-      </div>
-      <div class="dropdown">
-        <span>Деятельность</span>
-        <div class="dropdown-content">
-          <a href="activity.html">Инспекторский контроль</a>
-          <a href="electronic.html">АС Электронный Инспектор-KZ</a>
-          <a href="review.html">Рассмотрение документации</a>
+        <div class="dropdown">
+          <span>Деятельность</span>
+          <div class="dropdown-content">
+            <a href="activity.html">Инспекторский контроль</a>
+            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
+            <a href="review.html">Рассмотрение документации</a>
+          </div>
         </div>
-      </div>
-      <a href="news.html">Новости</a>
-      <a href="faq.html">Вопросы и ответы</a>
-      <span onclick="scrollDown()">Контакты</span>
-      <a href="profile.html">Личная страница</a>
-    </nav>
-  </div>
-</header>
+        <a href="news.html">Новости</a>
+        <a href="faq.html">Вопросы и ответы</a>
+        <a href="contacts.html">Контакты</a>
+        <a href="profile.html">Личная страница</a>
+      </nav>
+    </div>
+  </header>
 
-<script>
-function scrollDown() {
-  window.scrollTo({
-    top: document.body.scrollHeight
-  });
-}
-</script>
-  <main>
-    <section class="title-section">
-  <div class="title-wrapper with-logo">
-    <div class="logo-text-block">
-    <div class="title-text">
-      <h1 class="centered-title">
-  <div class="gugl">Инспекторский центр на железнодорожном транспорте</div>
-</h1>
-    </div>
-    </div>
-  </div>
+  <main class="main-content">
+    <section class="hero">
+      <h1>Добро пожаловать в Информационный Центр ICZT</h1>
+      <p>Наша миссия — обеспечение цифровой прозрачности и надежного инспектирования в Казахстане.</p>
+      <a href="mission.html" class="btn">Узнать больше</a>
     </section>
-    <hr class="section-divider">
-    <section class="advantages fog-background">
-      <div class="fog-overlay"></div>
-  <h2>Наши преимущества</h2>
-  <div class="advantage-grid">
-    <div class="advantage-block left">
-      <h3>Объективный контроль</h3>
-      <p>Мы независимы от изготовителей, продавцов и приобретателей, и не связаны административными, финансовыми, коммерческими или иными связями с организациями, имеющими заинтересованность в результатах инспекторского и приемочного контроля.</p>
-    </div>
-    <div class="advantage-block right">
-      <h3>Профессионалы</h3>
-      <p>Постоянное повышение уровня технических знаний инспекторов-приемщиков за счет обучения в инспекции, самообучения, обучения повышающего квалификацию, проводимого соответствующими сертифицированными и учебными организациями.</p>
-    </div>
-  </div>
-</section>
-    <section class="activity-links">
-  <a href="activity.html" class="activity-link left">
-    <img src="img/activity.png" class="activity-icon">
-    <span>Инспекторский контроль процессов и продукции</span></a>
-  <a href="electronic.html" class="activity-link center">
-    <img src="img/e-inspector.png" class="activity-icon">
-    <span>АС "Электронный Инспектор-KZ"</span></a>
-  <a href="review.html" class="activity-link right">
-    <img src="img/review-doc.png" class="activity-icon">
-    <span>Рассмотрение технической документации</span></a>
-</section>
-
   </main>
 
-<section class="map-section">
-  <h2>Мы на карте</h2>
-  <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2503.722400774047!2d71.42090631601933!3d51.13202829476537!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x42458713a6ad47d5%3A0x51b4bb921db67e09!2z0JHQpiBFbWVyYWxkIFRvd2Vy!5e0!3m2!1sru!2skz!4v1749633942866!5m2!1sru!2skz" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</section>
-
-  <footer class="site-footer">
-     <div class="footer-column footer-contact">
-      <h4>Контакты</h4>
-      <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
-      <p>Email: <a href="mailto:iczt@mail.ru">iczt@mail.ru</a></p>
-      <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
-      <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
-    </div>
-
-<div class="footer-social">
-  <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
-    <img src="img/instagram.png" alt="Instagram" />
-  </a>
-</div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
-  </div>
-</footer>
-
-
-  <script>
-  const toggleButton = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.top-nav');
-
-  toggleButton.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
-
+  <footer>
+    <p>&copy; 2025 ICZT. Все права защищены.</p>
+  </footer>
 </body>
 </html>
