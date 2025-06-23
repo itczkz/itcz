@@ -4,198 +4,50 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Вопросы и ответы — ICZT</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-
   <header>
     <div class="header-container">
-  	<a href="index.html">
-		<img src="img/logo.png" class="logo-img" style="position: fixed;left: 2px;top: 55px; /left: -50px;display: flex;align-items: baseline;justify-content: flex-end;font-family: &quot;Cormorant Garamond&quot;, serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;flex-direction: row-reverse;flex-wrap: wrap;align-content: flex-start;">
-</div></a>
-	<button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
-      <nav class="top-nav" style >
+      <a href="/">
+        <img src="/img/logo.png" class="logo-img" alt="Логотип ICZT">
+      </a>
+      <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
+      <nav class="top-nav">
         <div class="dropdown">
           <span>О центре</span>
           <div class="dropdown-content">
-            <a href="mission.html">Миссия и политика</a>
-            <a href="history.html">История компании</a>
-            <a href="documents.html">Документы</a>
+            <a href="/mission">Миссия и политика</a>
+            <a href="/history">История компании</a>
+            <a href="/documents">Документы</a>
           </div>
         </div>
         <div class="dropdown">
           <span>Деятельность</span>
           <div class="dropdown-content">
-            <a href="activity.html">Инспекторский контроль</a>
-            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
-            <a href="review.html">Рассмотрение документации</a>
+            <a href="/activity">Инспекторский контроль</a>
+            <a href="/electronic">АС Электронный Инспектор-KZ</a>
+            <a href="/review">Рассмотрение документации</a>
           </div>
         </div>
-        <a href="news.html">Новости</a>
-        <a href="faq.html">Вопросы и ответы</a>
-        <span onclick="scrollDown()">Контакты</span>
-        <a href="profile.html">Личная страница</a>
+        <a href="/news">Новости</a>
+        <a href="/faq" class="active">Вопросы и ответы</a>
+        <a href="#contacts">Контакты</a>
+        <a href="/profile">Личная страница</a>
       </nav>
     </div>
   </header>
-<script>
-function scrollDown() {
-  window.scrollTo({
-    top: document.body.scrollHeight
-  });
-}
-</script>
 
-<script>
-  const toggleButton = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('.top-nav');
+  <main class="main-content">
+    <section class="content-section">
+      <h1>Вопросы и ответы</h1>
+      <div id="faq-container">
+        <noscript>Пожалуйста, включите JavaScript для отображения вопросов.</noscript>
+      </div>
+    </section>
+  </main>
 
-  toggleButton.addEventListener('click', () => {
-    nav.classList.toggle('active');
-  });
-</script>
-
-  <main>
-    <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f4f4f4;
-	background-size: 100%
-      max-width: 1500px;
-    }
-
-    h1 {
-      text-align: center;
-    }
-
-    .faq {
-      background-color: #fff;
-      border-radius: 8px;
-      margin-bottom: 10px;
-      padding: 15px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
-    }
-
-    .question {
-      font-weight: bold;
-      cursor: pointer;
-      position: relative;
-    }
-
-    .answer {
-      display: none;
-      margin-top: 10px;
-      color: #333;
-    }
-
-    .faq.open .answer {
-      display: block;
-    }
-
-    .faq.open .question::after {
-      content: "▲";
-      position: absolute;
-      right: 0;
-    }
-
-    .question::after {
-      content: "▼";
-      position: absolute;
-      right: 0;
-    }
-  </style>
-</head>
-<body>
-
-  <h1>Вопросы и ответы</h1>
-<br/>
- <div class="faq">
-    <div class="question">1. Какие услуги предоставляет ТОО «ИЦЖТ»?</div>
-    <div class="answer">— проведение инспекторского контроля продукции железнодорожного назначения, в соответствии с требованиями ГОСТ 32894-2014 «Продукция железнодорожного назначения. Инспекторский контроль. Общие положения»;<br/>
-
-— допуск грузовых вагонов на инфраструктуру железных дорог общего пользования после изготовления;<br/>
-
- — участие в работах по постановке продукции на производство, в соответствии с требованиями ГОСТ 15.902-2014 «Система разработки и постановки продукции на производство (СРПП). Железнодорожный подвижной состав. Порядок разработки и постановки на производство» и допуску впервые выпускаемого в обращение и эксплуатацию железнодорожного подвижного состава на инфраструктуру;<br/>
-
- — проведение аудитов предприятий, в соответствии с требованиями
-ГОСТ Р ИСО 19011 «Руководящие указания по аудиту систем менеджмента»;<br/>
-
- — разработка нормативных документов в области обеспечения качества;<br/> 
-
- — внедрение на предприятиях эффективных систем менеджмента качества и бизнеса, инструментов обеспечения качества продукции.<br/>
-
-​</div>
-  </div>
-
-  <div class="faq">
-    <div class="question">2. Что такое инспекторский контроль в соответствии с требованиями ГОСТ 32894-2014 «Продукция железнодорожного назначения. Инспекторский контроль. Общие положения»?</div>
-    <div class="answer">
-Контроль продукции железнодорожного назначения, а также процесса ее производства подразделяется на инспекторский контроль продукции и инспекторский контроль производственного процесса изготовления этой продукции.<br/>
-<br/>
-Инспекторский контроль производственного процесса (ИКПП) –часть инспекторского контроля, направленная на получение объективных свидетельств того, что процесс изготовления (ремонта и/или модернизации) продукции, подлежащей инспекторскому контролю, а также методы оценки и контроля этой продукции продолжают соответствовать требованиям, установленными нормативными и техническими документами на эту продукцию.<br/>
-<br/>
-Инспекторский контроль продукции (ИКП) – часть инспекторского контроля, по результатам которого инспекторами-приёмщиками заводскими принимается решение о пригодности продукции к поставкам и (или) использованию по назначению на инфраструктуре железнодорожного транспорта общего пользования.
-</div>
-  </div>
-
-  <div class="faq">
-    <div class="question">3. Какая продукция подлежит инспекторскому контролю?</div>
-    <div class="answer">В соответствии с ГОСТ 32894, согласно утвержденного перечня продукции, подлежащей инспекторскому контролю по протокольному решению №06-ЦГ/154 от 03.12.2020 года за подписью Главного инженера АО «НК «ҚТЖ» Котырева Б.К (с изменениями и дополнениями)
-	<a class="pdf" href="https://06a466d0-b176-4f6d-be1b-28bb9eae168a.filesusr.com/ugd/c40202_81e5c947aa044fa1bc33854e69d8c62f.pdf">
-«Перечень продукции (грузовые вагоны, комплектующие детали и узлы) подлежащие инспекторскому контролю по условиям обеспечения безопасности железнодорожных перевозок».</a>       
-
-Номенклатура фактически принимаемой ТОО «ИЦЖТ» продукции значительно шире, так как все чаще в адрес инспекторского центра поступают запросы на проведение инспекторского контроля продукции, не включенной в Перечень.<br />
-</div>
-  </div>
-	<div class="faq">
-    		<div class="question">4. Какие полномочия имеет ТОО «ИЦЖТ» на осуществление инспекторского контроля?</div>
-    		<div class="answer">ТОО «ИЦЖТ», в соответствии с распоряжением ОАО «РЖД» от 03.08.2015 г. №1959р «О проведении инспекторского контроля на вагоностроительных и вагоноремонтных предприятиях», наделено владельцем инфраструктуры полномочиями по проведению инспекторского контроля в соответствии с ГОСТ 32894-2014 на предприятиях, изготавливающих грузовые вагоны и комплектующие к ним детали, а также на вагоноремонтных предприятиях.
-</div>
-  </div>
-	<div class="faq">
-    		<div class="question">5. Как организовать инспекторский контроль на предприятии?</div>
-    		<div class="answer">Для организации инспекторского контроля на предприятии необходимо направить в адрес ТОО «ИЦЖТ» (iczt@mail.ru) обращение, содержащее информацию о наименовании продукции, планируемом ежемесячном (годовом) объеме выпуска, а также приложением копий следующих документов:<br/>
-
- - сертификат (декларация) соответствия продукции требованиям Технических Регламентов Таможенного союза (ТР ТС 001/2011 «О безопасности железнодорожного подвижного состава»);<br/>
-
- - акт проведения постановки продукции на производство в соответствии с требованиями ГОСТ 15.902-2014 «Система разработки и постановки продукции на производство. Железнодорожный подвижной состав. Порядок разработки и постановки на производство» (приемочные/ квалификационные испытания);<br/>
-
- - Свидетельство о присвоении условного номера для клеймения продукции, выданное в соответствии с «Положением об условных номерах клеймения железнодорожного подвижного состава и его составных частей», утвержденным протоколом Совета по ж/д транспорту государств-участников Содружества (протокол от 21-22 октября 2014 года №61); <br/>
-
- - документ, подтверждающий наличие на законном основании права использования конструкторской документации при изготовлении продукции.<br/>
-
-ТОО «ИЦЖТ» рассматривает комплект направленных документов и в срок не позднее 5 рабочих дней направляет в адрес заявителя ответным обращением проект договора на оказание услуг по инспекторскому контролю, либо сообщает о необходимости предоставления дополнительных материалов, необходимых для принятия решения о возможности заключения договора. 
-
-Для осуществления инспекторского контроля продукции железнодорожного назначения необходимо подписание договора.
-</div>
-  </div>
-	<div class="faq">
-    		<div class="question">6. Что входит в услуги по участию в работах по постановке продукции на производство?</div>
-    		<div class="answer">ТОО «ИЦЖТ» принимает участие в рассмотрении и согласовании технической документации на изготовление грузовых вагонов и комплектующих их узлы и детали; от лица владельца инфраструктуры принимает участие в приемочных и квалификационных испытаниях грузовых вагонов нового изготовления, их узлов и деталей, при постановке продукции на производство в соответствии с ГОСТ 15.902-2014. <br/>
-
-ТОО «ИЦЖТ» на договорных условиях оказывает услуги по разработке программ и методик приемочных (квалификационных) испытаний; проводит анализ полноты и правильности комплекта документов для проведения приемочных (квалификационных) испытаний; оказывает содействие в подготовке предприятия к проведению приемочных (квалификационных) испытаний.
-
-</div>
-  </div>
-	<div class="faq">
-    		<div class="question">7. Для чего используется  Программное обеспечение АСУ "Электронный инспектор-KZ"?</div>
-    		<div class="answer">В целях недопущения на магистральную сеть контрафактной и фальсифицированной продукции, а так же обеспечение легитимности  товаросопроводительных документов. АСУ "Электронный инспектор-KZ" осуществляет формирование электронного паспорта качества на продукцию защищенного электронной цифровой подписью со стороны службы качества предприятия-изготовителя и организации, осуществляющий инспекторский контроль,  в соответствии  с ГОСТ-32894-2014.
-</div>
-  </div>
-
-
-
-  <script>
-    // Обработка кликов по вопросам
-    document.querySelectorAll('.question').forEach(q => {
-      q.addEventListener('click', () => {
-        q.parentElement.classList.toggle('open');
-      });
-    });
-  </script>
-</main>
-
-<footer class="site-footer">
+  <footer class="site-footer" id="contacts">
     <div class="footer-column footer-contact">
       <h4>Контакты</h4>
       <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
@@ -203,18 +55,84 @@ function scrollDown() {
       <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
       <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
     </div>
+    <div class="footer-social">
+      <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
+        <img src="/img/instagram.png" alt="Instagram" />
+      </a>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
+    </div>
+  </footer>
 
-<div class="footer-social">
-  <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
-    <img src="img/instagram.png" alt="Instagram" />
-  </a>
-</div>
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.top-nav');
+    toggleButton.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
 
-  </div>
+    // Загрузка FAQ с backend
+    document.addEventListener("DOMContentLoaded", async () => {
+      const container = document.getElementById("faq-container");
+      try {
+        const res = await fetch("/api/faq");
+        const faqList = await res.json();
 
-  <div class="footer-bottom">
-    <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
-  </div>
-</footer>
+        if (Array.isArray(faqList) && faqList.length > 0) {
+          container.innerHTML = faqList.map(item => `
+            <div class="faq">
+              <div class="question">${item.question}</div>
+              <div class="answer">${item.answer}</div>
+            </div>
+          `).join("");
+
+          document.querySelectorAll('.question').forEach(q => {
+            q.addEventListener('click', () => {
+              q.parentElement.classList.toggle('open');
+            });
+          });
+        } else {
+          container.innerHTML = "<p>Пока нет доступных вопросов и ответов.</p>";
+        }
+      } catch (err) {
+        console.error(err);
+        container.innerHTML = "<p>Ошибка загрузки FAQ.</p>";
+      }
+    });
+  </script>
+
+  <style>
+    .faq {
+      background-color: #fff;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      padding: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+    .question {
+      font-weight: bold;
+      cursor: pointer;
+      position: relative;
+    }
+    .answer {
+      display: none;
+      margin-top: 10px;
+      color: #333;
+    }
+    .faq.open .answer {
+      display: block;
+    }
+    .faq.open .question::after {
+      content: "▲";
+      position: absolute;
+      right: 0;
+    }
+    .question::after {
+      content: "▼";
+      position: absolute;
+      right: 0;
+    }
+  </style>
 </body>
 </html>
