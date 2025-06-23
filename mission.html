@@ -3,36 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Миссия и Политика - ICZT</title>
-  <link rel="stylesheet" href="style.css" />
+  <title>Миссия и Политика — ICZT</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">
-        <img src="img/logo.png" alt="Логотип ICZT" class="logo-img" />
+      <a href="/" class="logo">
+        <img src="/img/logo.png" alt="Логотип ICZT" class="logo-img" />
       </a>
+      <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
       <nav class="top-nav">
         <div class="dropdown">
           <span>О центре</span>
           <div class="dropdown-content">
-            <a href="mission.html">Миссия и политика</a>
-            <a href="history.html">История компании</a>
-            <a href="documents.html">Документы</a>
+            <a href="/mission" class="active">Миссия и политика</a>
+            <a href="/history">История компании</a>
+            <a href="/documents">Документы</a>
           </div>
         </div>
         <div class="dropdown">
           <span>Деятельность</span>
           <div class="dropdown-content">
-            <a href="activity.html">Инспекторский контроль</a>
-            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
-            <a href="review.html">Рассмотрение документации</a>
+            <a href="/activity">Инспекторский контроль</a>
+            <a href="/electronic">АС Электронный Инспектор-KZ</a>
+            <a href="/review">Рассмотрение документации</a>
           </div>
         </div>
-        <a href="news.html">Новости</a>
-        <a href="faq.html">Вопросы и ответы</a>
-        <a href="contacts.html">Контакты</a>
-        <a href="profile.html">Личная страница</a>
+        <a href="/news">Новости</a>
+        <a href="/faq">Вопросы и ответы</a>
+        <a href="/contacts">Контакты</a>
+        <a href="/profile">Личная страница</a>
       </nav>
     </div>
   </header>
@@ -46,8 +47,18 @@
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2025 ICZT. Все права защищены.</p>
+  <footer class="site-footer">
+    <div class="footer-bottom">
+      <p>&copy; 2025 ICZT. Все права защищены.</p>
+    </div>
   </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.top-nav');
+    toggleButton.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
