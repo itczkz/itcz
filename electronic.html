@@ -2,92 +2,69 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>АС Электронный Инспектор-KZ — ICZT</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>АС Электронный Инспектор-KZ - ICZT</title>
+  <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
   <header>
     <div class="header-container">
-      <a href="index.html" class="logo">
-        <img src="img/logo.png" class="logo-img" style="position: fixed;left: 2px;top: 55px; /left: -50px;display: flex;align-items: baseline;justify-content: flex-end;font-family: &quot;Cormorant Garamond&quot;, serif;font-optical-sizing: auto;font-weight: 600;font-style: normal;flex-direction: row-reverse;flex-wrap: wrap;align-content: flex-start;"></a></div>
-
+      <a href="/" class="logo">
+        <img src="/img/logo.png" alt="Логотип ICZT" class="logo-img" />
+      </a>
       <button class="menu-toggle" aria-label="Открыть меню">&#9776;</button>
       <nav class="top-nav">
         <div class="dropdown">
           <span>О центре</span>
           <div class="dropdown-content">
-            <a href="mission.html">Миссия и политика</a>
-            <a href="history.html">История компании</a>
-            <a href="documents.html">Документы</a>
+            <a href="/mission">Миссия и политика</a>
+            <a href="/history">История компании</a>
+            <a href="/documents">Документы</a>
           </div>
         </div>
         <div class="dropdown">
           <span>Деятельность</span>
           <div class="dropdown-content">
-            <a href="activity.html">Инспекторский контроль</a>
-            <a href="electronic.html">АС Электронный Инспектор-KZ</a>
-            <a href="review.html">Рассмотрение документации</a>
+            <a href="/activity">Инспекторский контроль</a>
+            <a href="/electronic" class="active">АС Электронный Инспектор-KZ</a>
+            <a href="/review">Рассмотрение документации</a>
           </div>
         </div>
-        <a href="news.html">Новости</a>
-        <a href="faq.html">Вопросы и ответы</a>
-        <span onclick="scrollDown()">Контакты</span>
-        <a href="profile.html">Личная страница</a>
+        <a href="/news">Новости</a>
+        <a href="/faq">Вопросы и ответы</a>
+        <a href="#contacts">Контакты</a>
+        <a href="/profile">Личная страница</a>
       </nav>
     </div>
   </header>
 
-<script>
-function scrollDown() {
-  window.scrollTo({
-    top: document.body.scrollHeight
-  });
-}
-</script>
+  <main class="main-content">
+    <section class="content-section">
+      <h1>АС Электронный Инспектор-KZ</h1>
+      <p>Ведется работа по интеграции функционирующей системы АС "Электронный инспектор" с аналогичной разработанной системой АСУ "Электронный инспектор-KZ". Запуск системы планируется ориентировочно на начало 2024 года.</p>
+      <p>Программное обеспечение АСУ "Электронный инспектор-KZ" разработано на базе "1С. Предприятие". Оно предназначено для исключения появления фальсификатов паспортов/сертификатов качества и появления на рынке контрафактной продукции, а также учета крупного литья на предмет двойников и контрафакта.</p>
+      <p>В настоящий момент система проходит тестовый период на предприятии ТОО "Format Mach Company" — инжинирингово-маркетинговая компания.</p>
+      <p>Система позволяет открытие кабинета для предприятий, выпускающих продукцию, не подлежащую инспекторскому контролю.</p>
+      <p>Также система позволяет проводить проверку электронных паспортов/сертификатов качества для покупателей, торговых домов или вагоноремонтных предприятий.</p>
+      <p>Электронные паспорта/сертификаты качества подписываются электронно-цифровой подписью (ЭЦП) задействованных лиц.</p>
+      <p>Для ознакомления с тарифами использования и получения доступа к АСУ "Электронный инспектор-KZ" обращаться письменно в свободной форме на почту — <a href="mailto:iczt@mail.ru">iczt@mail.ru</a>.</p>
+      <p>АСУ "Электронный инспектор-KZ" на сайте — <a href="http://192.168.0.102/dikz/ru" target="_blank">www.e-inspector.kz</a></p>
+    </section>
+  </main>
 
-  <main style="display: flex; justify-content: center;">
-  <section style="max-width: 1200px; width: 100%; padding: 20px; text-align: justify; line-height: 1.8; font-size: 20px;">
-    <h1 style="text-align: center; font-size: 33px;">АВТОМАТИЗИРОВАННАЯ СИСТЕМА «ЭЛЕКТРОННЫЙ ИНСПЕКТОР»</h1>
-    
-    <p>Ведется работа по интеграции функционирующей системы АС "Электронный инспектор" с аналогичной разработанной системой АСУ "Электронный инспектор-KZ". Запуск системы планируется ориентировочно на начало 2024 года.</p>
-    
-    <p>Программное обеспечение АСУ "Электронный инспектор-KZ" разработано на базе "1С. Предприятие". Разработано для исключения появления фальсификатов паспортов/сертификатов качества и появления на рынке контрафактной продукции, а также учета крупного литья на предмет двойников и контрафакта.</p>
-    
-    <p>В настоящий момент система проходит тестовый период на предприятии ТОО "Format Mach Company" — инжинирингово-маркетинговая компания.</p>
-    
-    <p>Система позволяет открытие кабинета для предприятий, выпускающих продукцию, не подлежащую инспекторскому контролю.</p>
-    
-    <p>Также система позволяет проводить проверку электронных паспортов/сертификатов качества для покупателей, торговых домов или вагоноремонтных предприятий.</p>
-    
-    <p>Электронные паспорта/сертификаты качества подписываются электронно-цифровой подписью (ЭЦП) задействованных лиц.</p>
-    
-    <p>Для ознакомления с тарифами использования и получения доступа к АСУ "Электронный инспектор-KZ" обращаться письменно в свободной форме на почту — <a href="https://e.mail.ru/compose/" target="_blank">iczt@mail.ru</a>
-</p>
-    
-    <p>АСУ "Электронный инспектор-KZ" на сайте — <a href="http://192.168.0.102/dikz/ru" target="_blank">www.e-inspector.kz</a></p>
-  </section>
-</main>
-
-
-
-  <footer class="site-footer">
-      <div class="footer-column footer-contact">
-        <h4>Контакты</h4>
-        <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
-        <p>Email: <a href="mailto:iczt@mail.ru">iczt@mail.ru</a></p>
-        <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
-        <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
-      </div>
-
-      <div class="footer-social">
-        <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
-          <img src="img/instagram.png" alt="Instagram" />
-        </a>
-      </div>
-
+  <footer class="site-footer" id="contacts">
+    <div class="footer-column footer-contact">
+      <h4>Контакты</h4>
+      <p>Адрес: г. Астана, Есильский район,<br>ул. Кунаева 10</p>
+      <p>Email: <a href="mailto:iczt@mail.ru">iczt@mail.ru</a></p>
+      <p>Email: <a href="mailto:info@iczt.kz">info@iczt.kz</a></p>
+      <p>Email: <a href="mailto:otdel.ik@iczt.kz">otdel.ik@iczt.kz</a></p>
     </div>
-
+    <div class="footer-social">
+      <a href="https://www.instagram.com/iczt.kz/" target="_blank" rel="noopener">
+        <img src="/img/instagram.png" alt="Instagram" />
+      </a>
+    </div>
     <div class="footer-bottom">
       <p>&copy; 2025 Инспекторский центр. Все права защищены.</p>
     </div>
@@ -96,11 +73,9 @@ function scrollDown() {
   <script>
     const toggleButton = document.querySelector('.menu-toggle');
     const nav = document.querySelector('.top-nav');
-
     toggleButton.addEventListener('click', () => {
       nav.classList.toggle('active');
     });
   </script>
-
 </body>
 </html>
